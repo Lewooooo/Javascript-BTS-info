@@ -23,16 +23,10 @@ function monboutonclick() {
 }
 monbouton.textContent="Afficher/Cacher"
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
-console.log(Math.random(9+1));
-
-let max = 10
-let min = 1
+let max = 10;
+let min = 1;
 
 function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}    
-console.log()
+    return Math.random() * (10 - 1) + 1;
+}
+console.log(Math.round(getRandomArbitrary()));
