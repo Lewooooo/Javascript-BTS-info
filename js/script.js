@@ -31,4 +31,7 @@ function getRandomArbitrary(min, max) {
 }
 console.log(Math.round(getRandomArbitrary()));
 
-
+let lesimg = document.getElementsByTagName("img");
+for (let unimg of lesimg){
+    unimg.classList.add("cacher");
+}
