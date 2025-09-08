@@ -30,3 +30,5 @@ function getRandomArbitrary(min, max) {
     return Math.random() * (10 - 1) + 1;
 }
 console.log(Math.round(getRandomArbitrary()));
+
+
