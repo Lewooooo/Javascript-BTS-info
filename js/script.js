@@ -49,25 +49,23 @@ texte_nombre_essaie.textContent = "nombre essaie : " + nombre_essaie;
 let bouton_essaie = document.getElementById("bouton_essaie");
 bouton_essaie.addEventListener("click",test_essaie);
 
-let victoire = false;
+let fini = false;
 
 function test_essaie() {
     let input = document.getElementById("texte_essaie").value;
     console.log(reponse);
-    if (!victoire){
+    if (!fini){
+        nombre_essaie -= 1;
         if (input == reponse){
-            if (nombre_essaie > 0){
-                nombre_essaie -= 1;
-                console.log("Bien joué");
-                document.getElementById("gagner").classList.remove("cacher");
-                victoire = true
-            }
+            console.log("Bien joué");
+            document.getElementById("gagner").classList.remove("cacher");
+            fini = true
         }else{
             if (nombre_essaie <= 0) {
                 document.getElementById("perdu").classList.remove("cacher");
+                fini = true
             }else{
                 console.log("Raté");
-                nombre_essaie -= 1;
             }
             texte_nombre_essaie.textContent = "nombre essaie : " + nombre_essaie;
         }
