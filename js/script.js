@@ -1,0 +1,38 @@
+console.log("Script JS");
+let nom = "Dubois";
+console.log(nom);
+console.log(document);
+
+let monSpan = document.getElementById("monSpan");
+monSpan.addEventListener("click", monSpanClick);
+function monSpanClick(){
+    this.classList.toggle('SpanBlack')
+}
+
+let lesh2 = document.getElementsByTagName("h2");
+for (let unh2 of lesh2){
+    unh2.classList.add("cacher");
+}
+
+let monbouton = document.getElementById("monbouton");
+monbouton.addEventListener("click", monboutonclick)
+function monboutonclick() {
+    for (let unh2 of lesh2){
+        unh2.classList.toggle("cacher");
+    }
+}
+monbouton.textContent="Afficher/Cacher"
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+console.log(Math.random(9+1));
+
+let max = 10
+let min = 1
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}    
+console.log()

@@ -1,0 +1,19 @@
+p{
+    color: blue;
+}
+span{
+    color: red;
+    cursor: pointer;
+}
+.SpanBlack{
+    color: black;
+}
+.SpanRed{
+    color: red;
+}
+.cacher{
+    display: none;
+}
+button{
+    cursor: pointer;
+}
