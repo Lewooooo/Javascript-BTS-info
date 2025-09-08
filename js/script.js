@@ -29,5 +29,21 @@ let min = 1;
 function getRandomArbitrary(min, max) {
     return Math.random() * (10 - 1) + 1;
 }
-console.log(Math.round(getRandomArbitrary()));
 
+
+let reponse = Math.round(getRandomArbitrary());
+console.log(reponse);
+
+let bouton_essaie = document.getElementById("bouton_essaie");
+bouton_essaie.addEventListener("click",test_essaie);
+
+function test_essaie() {
+    let input = document.getElementById("texte_essaie").value;
+    console.log(input);
+    console.log(reponse);
+    if (input == reponse){
+        console.log("Bien joué");
+    }else{
+        console.log("Raté");
+    }
+}
