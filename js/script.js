@@ -26,6 +26,10 @@ monbouton.textContent="Afficher/Cacher"
 let max = 10;
 let min = 1;
 
+
+
+
+
 function getRandomArbitrary(min, max) {
     return Math.random() * (10 - 1) + 1;
 }
@@ -38,16 +42,27 @@ for (let unimg of lesimg){
 let reponse = Math.round(getRandomArbitrary());
 console.log(reponse);
 
+let nombre_essaie = 3;
+let texte_nombre_essaie = document.getElementById("nombre_essaie");
+texte_nombre_essaie.textContent = "nombre essaie : " + nombre_essaie;
+
 let bouton_essaie = document.getElementById("bouton_essaie");
 bouton_essaie.addEventListener("click",test_essaie);
 
 function test_essaie() {
     let input = document.getElementById("texte_essaie").value;
-    console.log(input);
     console.log(reponse);
     if (input == reponse){
         console.log("Bien joué");
+        document.getElementById("gagner").classList.remove("cacher");
+        alert("Vous aves gagné !!")
     }else{
         console.log("Raté");
+        nombre_essaie -= 1;
+        if (nombre_essaie <= 0) {
+            document.getElementById("perdu").classList.remove("cacher");
+            alert("Vous aves perdu !!")
+        }
+        texte_nombre_essaie.textContent = "nombre essaie : " + nombre_essaie;
     }
 }
