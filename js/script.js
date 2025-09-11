@@ -46,6 +46,8 @@ let nombre_essaie = 3;
 let texte_nombre_essaie = document.getElementById("nombre_essaie");
 texte_nombre_essaie.textContent = "nombre essaie : " + nombre_essaie;
 
+let texte_indice = document.getElementById("indice");
+
 let bouton_essaie = document.getElementById("bouton_essaie");
 bouton_essaie.addEventListener("click",test_essaie);
 
@@ -55,20 +57,36 @@ function test_essaie() {
     let input = document.getElementById("texte_essaie").value;
     console.log(reponse);
     if (!fini){
+        if (input > reponse) {
+            texte_indice.textContent = "C'est moins";
+        } else if (input < reponse) {
+            texte_indice.textContent = "C'est plus";
+        }
+
         nombre_essaie -= 1;
         if (input == reponse){
             console.log("Bien joué");
             document.getElementById("gagner").classList.remove("cacher");
+            texte_indice.textContent = "C'est gagné"
             fini = true
         }else{
             if (nombre_essaie <= 0) {
                 document.getElementById("perdu").classList.remove("cacher");
+                texte_indice.textContent = "C'est perdu"
                 fini = true
             }else{
                 console.log("Raté");
             }
             texte_nombre_essaie.textContent = "nombre essaie : " + nombre_essaie;
         }
-
+        
     }
+}
+
+let bouton_relancer = document.getElementById('reload');
+bouton_relancer.addEventListener('click',reload);
+
+function reload() {
+    // reload the current page
+    window.location.reload();
 }
