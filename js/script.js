@@ -53,6 +53,7 @@ function test_essaie() {
         }
 
         nombre_essaie -= 1;
+        texte_nombre_essaie.textContent = "nombre essaie : " + nombre_essaie;
         if (input == reponse){
             console.log("Bien joué");
             document.getElementById("gagner").classList.remove("cacher");
@@ -66,7 +67,6 @@ function test_essaie() {
             }else{
                 console.log("Raté");
             }
-            texte_nombre_essaie.textContent = "nombre essaie : " + nombre_essaie;
         }
         
     }
