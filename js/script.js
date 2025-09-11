@@ -62,7 +62,7 @@ function test_essaie() {
         }else{
             if (nombre_essaie <= 0) {
                 document.getElementById("perdu").classList.remove("cacher");
-                texte_indice.textContent = "C'est perdu"
+                texte_indice.textContent = "C'est perdu la réponse était : " + reponse;
                 fini = true
             }else{
                 console.log("Raté");
