@@ -22,8 +22,6 @@ function monboutonclick() {
 let max = 10;
 let min = 1;
 
-
-
 function getRandomArbitrary(min, max) {
     return Math.random() * (10 - 1) + 1;
 }
@@ -39,6 +37,12 @@ let texte_indice = document.getElementById("indice");
 
 let bouton_essaie = document.getElementById("bouton_essaie");
 bouton_essaie.addEventListener("click",test_essaie);
+let input = document.getElementById("texte_essaie");
+input.addEventListener("keypress",(e) => {
+    if(e.key == "Enter"){
+        test_essaie();
+    }
+});
 
 let fini = false;
 
