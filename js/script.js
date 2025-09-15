@@ -72,6 +72,7 @@ function test_essaie() {
                 console.log("Raté");
             }
         }
+       
         
     }
 }
