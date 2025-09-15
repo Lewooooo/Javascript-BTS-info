@@ -21,6 +21,7 @@ span{
 button{
     cursor: pointer;
 }
+
 .carousel {
     position: relative;
     width: 100%;
@@ -41,22 +42,11 @@ button{
     background-color: rgba(133, 5, 5, 0.911);
     color: rgb(109, 9, 190);
     border: none;
-    padding: 10px;
+    padding: 20px;
     cursor: pointer;
-    transform: translateY(-50%);
+    transform: translateY(-250%);
     z-index: 1;
 }
 
 .carousel-button.prev { left: 10px; }
 .carousel-button.next { right: 10px; }
-
-.visuallyhidden {
-    position: absolute; /* Positionne l'élément en dehors du flux normal */
-    width: 1px;        /* Réduit la largeur à 1 pixel */
-    height: 1px;       /* Réduit la hauteur à 1 pixel */
-    margin: -1px;      /* Utilise une marge négative pour éviter l'espace supplémentaire */
-    padding: 0;        /* Aucune marge intérieure */
-    overflow: hidden;   /* Cache tout débordement */
-    clip: rect(0, 0, 0, 0); /* Cache l'élément en le découpant */
-    border: 0;         /* Enlève toute bordure */
-}
