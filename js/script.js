@@ -5,7 +5,7 @@ console.log(document);
 
 let monSpan = document.getElementById("monSpan");
 monSpan.addEventListener("click", monSpanClick);
-function monSpanClick(){
+function monSpanClick() {
     this.classList.toggle('SpanBlack')
 }
 
@@ -14,7 +14,7 @@ monbouton.addEventListener("click", monboutonclick)
 
 let lesh2 = document.getElementsByTagName("h2");
 function monboutonclick() {
-    for (let unh2 of lesh2){
+    for (let unh2 of lesh2) {
         unh2.classList.toggle("cacher");
     }
 }
@@ -36,10 +36,10 @@ texte_nombre_essaie.textContent = "nombre essaie : " + nombre_essaie;
 let texte_indice = document.getElementById("indice");
 
 let bouton_essaie = document.getElementById("bouton_essaie");
-bouton_essaie.addEventListener("click",test_essaie);
+bouton_essaie.addEventListener("click", test_essaie);
 let input = document.getElementById("texte_essaie");
-document.addEventListener("keypress",(e) => {
-    if(e.key == "Enter"){
+document.addEventListener("keypress", (e) => {
+    if (e.key == "Enter") {
         test_essaie();
     }
 });
@@ -49,7 +49,7 @@ let fini = false;
 function test_essaie() {
     let input = document.getElementById("texte_essaie").value;
     console.log(reponse);
-    if (!fini){
+    if (!fini) {
         if (input > reponse) {
             texte_indice.textContent = "C'est moins";
         } else if (input < reponse) {
@@ -58,29 +58,52 @@ function test_essaie() {
 
         nombre_essaie -= 1;
         texte_nombre_essaie.textContent = "nombre essaie : " + nombre_essaie;
-        if (input == reponse){
+        if (input == reponse) {
             console.log("Bien joué");
             document.getElementById("gagner").classList.remove("cacher");
             texte_indice.textContent = "C'est gagné"
             fini = true
-        }else{
+        } else {
             if (nombre_essaie <= 0) {
                 document.getElementById("perdu").classList.remove("cacher");
                 texte_indice.textContent = "C'est perdu la réponse était : " + reponse;
                 fini = true
-            }else{
+            } else {
                 console.log("Raté");
             }
         }
        
         
+
     }
 }
 
 let bouton_relancer = document.getElementById('reload');
-bouton_relancer.addEventListener('click',reload);
+bouton_relancer.addEventListener('click', reload);
 
 function reload() {
     // reload the current page
     window.location.reload();
 }
+
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.carousel-button.next');
+const prevButton = document.querySelector('.carousel-button.prev');
+
+let currentIndex = 0;
+
+function updateSlidePosition() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+}
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlidePosition();
+});
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlidePosition();
+});
