@@ -38,7 +38,7 @@ let texte_indice = document.getElementById("indice");
 let bouton_essaie = document.getElementById("bouton_essaie");
 bouton_essaie.addEventListener("click",test_essaie);
 let input = document.getElementById("texte_essaie");
-input.addEventListener("keypress",(e) => {
+document.addEventListener("keypress",(e) => {
     if(e.key == "Enter"){
         test_essaie();
     }
