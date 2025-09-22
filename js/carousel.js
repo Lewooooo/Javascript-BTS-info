@@ -1,5 +1,10 @@
 let indiceCourant = 0;
 const carrousels = document.getElementsByClassName("carrousel");
+const prochain = document.getElementById("prochain");
+const precedent = document.getElementById("precedent");
+
+prochain.addEventListener("click", prochainclick)
+precedent.addEventListener("click", precedentclick)
 
 if (carrousels.length > 0) {
     let carrou1 = carrousels[0];
