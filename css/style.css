@@ -22,31 +22,3 @@ button{
     cursor: pointer;
 }
 
-.carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.carousel-track {
-    display: flex;
-}
-
-.carousel-slide {
-    min-width: 100%;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    background-color: rgba(133, 5, 5, 0.911);
-    color: rgb(109, 9, 190);
-    border: none;
-    padding: 20px;
-    cursor: pointer;
-    transform: translateY(-250%);
-    z-index: 1;
-}
-
-.carousel-button.prev { left: 10px; }
-.carousel-button.next { right: 10px; }
