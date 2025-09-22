@@ -3,8 +3,21 @@ const carrousels = document.getElementsByClassName("carrousel");
 const prochain = document.getElementById("prochain");
 const precedent = document.getElementById("precedent");
 
-prochain.addEventListener("click", prochainclick)
-precedent.addEventListener("click", precedentclick)
+prochain.addEventListener("click",prochainclick);
+function prochainclick() {
+    if (indiceCourant==carrou1.children.length) {
+        indiceCourant=0
+    }
+    indiceCourant=indiceCourant+1
+}
+
+precedent.addEventListener("click", precedentclick);
+function precedentclick() {
+    if (indiceCourant==0) {
+        indiceCourant= carrou1.children.length
+    }
+    indiceCourant=indiceCourant-1
+}
 
 if (carrousels.length > 0) {
     let carrou1 = carrousels[0];
