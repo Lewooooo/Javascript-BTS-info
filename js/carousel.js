@@ -6,19 +6,21 @@ let carroul1 = carrousels[0]
 
 prochain.addEventListener("click",prochainclick);
 function prochainclick() {
-    if (indiceCourant==carroul1.children.length) {
+    if (indiceCourant==carroul1.children.length-1) {
         indiceCourant=0
+    }else{
+        indiceCourant=indiceCourant+1
     }
-    indiceCourant=indiceCourant+1
     updateimg()
 }
 
 precedent.addEventListener("click", precedentclick);
 function precedentclick() {
     if (indiceCourant==0) {
-        indiceCourant= carroul1.children.length
+        indiceCourant= carroul1.children.length-1
+    }else{
+        indiceCourant=indiceCourant-1
     }
-    indiceCourant=indiceCourant-1
     updateimg()
 }
 
@@ -31,6 +33,7 @@ if (carrousels.length > 0) {
 }
 
 function updateimg(){
+    console.log(indiceCourant);
     for (i = 0; i < carroul1.children.length; i++) {
         let li = carroul1.children[i];
         li.style.display = "none";
