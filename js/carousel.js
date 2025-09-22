@@ -41,3 +41,5 @@ function updateimg(){
         leli.style.display = "block";
     }
 }
+
+setInterval(prochainclick, 666)
