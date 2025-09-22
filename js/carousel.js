@@ -2,21 +2,24 @@ let indiceCourant = 0;
 const carrousels = document.getElementsByClassName("carrousel");
 const prochain = document.getElementById("prochain");
 const precedent = document.getElementById("precedent");
+let carroul1 = carrousels[0]
 
 prochain.addEventListener("click",prochainclick);
 function prochainclick() {
-    if (indiceCourant==carrou1.children.length) {
+    if (indiceCourant==carroul1.children.length) {
         indiceCourant=0
     }
     indiceCourant=indiceCourant+1
+    updateimg()
 }
 
 precedent.addEventListener("click", precedentclick);
 function precedentclick() {
     if (indiceCourant==0) {
-        indiceCourant= carrou1.children.length
+        indiceCourant= carroul1.children.length
     }
     indiceCourant=indiceCourant-1
+    updateimg()
 }
 
 if (carrousels.length > 0) {
@@ -24,5 +27,14 @@ if (carrousels.length > 0) {
     for (i = 1; i < carrou1.children.length; i++) {
         let li = carrou1.children[i];
         li.style.display = "none";
+    }
+}
+
+function updateimg(){
+    for (i = 0; i < carroul1.children.length; i++) {
+        let li = carroul1.children[i];
+        li.style.display = "none";
+        let leli = carroul1.children[indiceCourant];
+        leli.style.display = "block";
     }
 }
