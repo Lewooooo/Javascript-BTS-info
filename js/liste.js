@@ -83,9 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
    function changeColor(elementSelect, color){
         let frereApres = elementSelect.nextSibling;
-        frereApres.style.color=color;
+        if (frereApres){
+            frereApres.style.color=color;
+        }
         let frereAvant = elementSelect.previousSibling;
-        frereAvant.style.color=color;
+        if (frereAvant){
+            frereAvant.style.color=color;
+        }
    }
 
 });
