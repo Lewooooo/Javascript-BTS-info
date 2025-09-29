@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (this.classList.contains("click")){
             elementSelect=this;
         }else{
+            changeColor(elementSelect, "black");
             elementSelect=null;
         }
     }
@@ -75,12 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.code=="KeyE"){
             if (elementSelect){
                 elementSelect.style.color="gold";
-                let frereApres = elementSelect.nextSibling;
-                frereApres.style.color="orange";
-                let frereAvant = elementSelect.previousSibling;
-                frereAvant.style.color="orange";
+                changeColor(elementSelect, "orange");
             }
         }
+   }
+
+   function changeColor(elementSelect, color){
+        let frereApres = elementSelect.nextSibling;
+        frereApres.style.color=color;
+        let frereAvant = elementSelect.previousSibling;
+        frereAvant.style.color=color;
    }
 
 });
