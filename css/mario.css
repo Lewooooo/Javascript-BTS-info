@@ -4,3 +4,17 @@ img{
     width: 20rem;
     height: 20rem;
 }
+.gagner{
+    background-image: url("../image/korogu.png");
+    margin: 1.5rem;
+    width: 20rem;
+    height: 20rem;
+    background-size: 20rem;
+}
+.perdu{
+    background-image: url("../image/ganon.jpg");
+    margin: 1.5rem;
+    width: 20rem;
+    height: 20rem;
+    background-size: 20rem;
+}
