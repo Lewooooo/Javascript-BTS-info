@@ -6,6 +6,7 @@ img{
 }
 .gagner{
     background-image: url("../image/korogu.png");
+    background-size: cover;
     margin: 1.5rem;
     width: 20rem;
     height: 20rem;
@@ -13,6 +14,7 @@ img{
 }
 .perdu{
     background-image: url("../image/ganon.jpg");
+    outline: none;
     margin: 1.5rem;
     width: 20rem;
     height: 20rem;
