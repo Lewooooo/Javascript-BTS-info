@@ -72,6 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 elementSelect.remove();
             }
         }
+        if (event.code=="KeyE"){
+            if (elementSelect){
+                elementSelect.style.color="gold";
+                let frereApres = elementSelect.nextSibling;
+                frereApres.style.color="orange";
+                let frereAvant = elementSelect.previousSibling;
+                frereAvant.style.color="orange";
+            }
+        }
    }
 
 });
