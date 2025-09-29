@@ -3,4 +3,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const liste = document.getElementById('liste');
     const btSupprimer = document.getElementById('btSupprimer');
 
+    
 });

@@ -1,22 +1,17 @@
-img{
+/* Remplacer l'élément img par un div */
+.carte {
     cursor: pointer;
     margin: 1.5rem;
-    width: 20rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
+    background-image: url("../image/mystere2.jpg");
+    background-size: 15rem;
 }
+
 .gagner{
     background-image: url("../image/korogu.png");
-    background-size: cover;
-    margin: 1.5rem;
-    width: 20rem;
-    height: 20rem;
-    background-size: 20rem;
 }
+
 .perdu{
     background-image: url("../image/ganon.jpg");
-    outline: none;
-    margin: 1.5rem;
-    width: 20rem;
-    height: 20rem;
-    background-size: 20rem;
 }
