@@ -1,0 +1,15 @@
+#liste {
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.survol {
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+}
+
+.click{
+    background-color: rgb(118, 195, 221);
+}

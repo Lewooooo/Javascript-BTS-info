@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded",()=>{
 let indiceCourant = 0;
 const carrousels = document.getElementsByClassName("carrousel");
 const prochain = document.getElementById("prochain");
@@ -42,4 +43,5 @@ function updateimg(){
     }
 }
 
-setInterval(prochainclick, 666)
+setInterval(prochainclick, 666);
+})
