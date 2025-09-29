@@ -50,8 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function liClick(){
-        elementSelect=this;
         this.classList.toggle("click")
+        if (this.classList.contains("click")){
+            elementSelect=this;
+        }else{
+            elementSelect=null;
+        }
     }
 
     function btSupprimerClick(){
