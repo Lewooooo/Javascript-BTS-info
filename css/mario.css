@@ -15,3 +15,6 @@
 .perdu{
     background-image: url("../image/ganon.jpg");
 }
+li {
+    list-style: none;
+}
