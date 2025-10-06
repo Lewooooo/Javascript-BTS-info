@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function gagner(li){
-        nbr_vie.textContent = "Vie: " + nbr_vie -1;
+        nbr_vie.textContent = "Vie: " + Number(nbr_vie.textContent) -1;
         resultat.textContent = "Gagner";
         li.children[0].classList.add("gagner");
     }
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nbr_vie.textContent=0) {
             resultat.textContent = "Perdu";
         }else{
-            nbr_vie.textContent = "Vie: " + nbr_vie -1;
+            nbr_vie.textContent = "Vie: " + Number(nbr_vie.textContent) -1;
         }
         li.children[0].classList.add("perdu");
     }
