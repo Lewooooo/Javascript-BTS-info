@@ -6,7 +6,11 @@
     opacity: 0.8;
     cursor: pointer;
 }
-.active {
-    opacity: 1 !important;
+.activelike {
+    color: blue;
 }
+.activedislike {
+    color: red;
+}
+
 
