@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let indice_gagant = Math.floor(Math.random() * liste.children.length);
     console.log(indice_gagant);
+    nbr_vie.textContent = "Vie: " + nbr_vie;
 
     for (let index = 0; index < liste.children.length; index++) {
         let li = liste.children[index];
