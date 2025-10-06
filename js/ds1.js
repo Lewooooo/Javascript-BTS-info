@@ -23,8 +23,6 @@ document.addEventListener("DOMContentLoaded",()=>{
                 cpt_dislike.textContent = Number(cpt_dislike.textContent) - 1;
             }
         }
-        
-        
     }
 
     function dislike() {
