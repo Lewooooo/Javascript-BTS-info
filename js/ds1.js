@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     
 
     function like() {
-
+        
     }
     
     function dislike() {
