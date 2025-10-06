@@ -1,0 +1,11 @@
+#btn-like{
+    cursor: pointer;
+}
+.material-symbols-outlined {
+    font-size: 48px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.active {
+    opacity: 1 !important;
+}
