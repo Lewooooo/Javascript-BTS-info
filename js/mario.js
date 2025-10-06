@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         jeuActif = false;
         resultat.textContent = "Gagné!";
-        resultat.className = "gagner";
         li.children[0].classList.add("gagner");
         
         // Désactiver toutes les cartes
@@ -98,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nbr_vie <= 0) {
             jeuActif = false;
             resultat.textContent = "Perdu!";
-            resultat.className = "perdu";
             
             // Révéler la carte gagnante
             let carteGagnante = liste.children[indice_gagant].children[0];
