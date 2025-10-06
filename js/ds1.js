@@ -10,21 +10,36 @@ document.addEventListener("DOMContentLoaded",()=>{
     
 
     function like() {
-        cpt_like.textContent = Number(cpt_like.textContent) + 1;
-        btn_like.classList.add("activelike")
-        btn_dislike.classList.remove("activedislike")
-        if (cpt_dislike.textContent>=1) {
-            cpt_dislike.textContent = Number(cpt_dislike.textContent) - 1;
+        if (btn_like.classList.contains("activelike")) {
+            if (cpt_like.textContent>=1) {
+                cpt_like.textContent = Number(cpt_like.textContent) - 1;
+            }
+            btn_like.classList.remove("activelike")
+        }else{
+            cpt_like.textContent = Number(cpt_like.textContent) + 1;
+            btn_like.classList.add("activelike")
+            btn_dislike.classList.remove("activedislike")
+            if (cpt_dislike.textContent>=1) {
+                cpt_dislike.textContent = Number(cpt_dislike.textContent) - 1;
+            }
         }
+        
         
     }
 
     function dislike() {
-        cpt_dislike.textContent = Number(cpt_dislike.textContent) + 1;
-        btn_dislike.classList.add("activedislike")
-        btn_like.classList.remove("activelike")
-        if (cpt_like.textContent>=1) {
-            cpt_like.textContent = Number(cpt_like.textContent) - 1;
+        if (btn_dislike.classList.contains("activedislike")) {
+            if (cpt_dislike.textContent>=1) {
+                cpt_dislike.textContent = Number(cpt_dislike.textContent) - 1;
+            }
+            btn_dislike.classList.remove("activedislike")
+        }else{
+            cpt_dislike.textContent = Number(cpt_dislike.textContent) + 1;
+            btn_dislike.classList.add("activedislike")
+            btn_like.classList.remove("activelike")
+            if (cpt_like.textContent>=1) {
+                cpt_like.textContent = Number(cpt_like.textContent) - 1;
+            }
         }
     }
 })
