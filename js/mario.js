@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
         resultat.textContent = "Gagner";
         li.children[0].classList.add("gagner");
     }
+
     function perdre(li){
-        if (element_vie.textContent=0) {
+        if (element_vie.textContent <= 0) {
             resultat.textContent = "Perdu";
         }else{
             nbr_vie -= 1
