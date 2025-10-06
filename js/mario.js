@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let nbr_vie = 2;
     let jeuActif = true;
     let indice_gagant;
+    let cartesCliquees = new Set(); // Pour garder trace des cartes déjà cliquées
 
     // Initialiser le jeu
     initialiserJeu();
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Réinitialiser les variables
         nbr_vie = 2;
         jeuActif = true;
+        cartesCliquees.clear(); // Vider l'ensemble des cartes cliquées
         element_vie.textContent = "Vies: " + nbr_vie;
         resultat.textContent = "";
         resultat.className = "";
@@ -43,11 +45,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Réattribuer les événements
         for (let index = 0; index < liste.children.length; index++) {
             let li = liste.children[index];
-            if (index == indice_gagant) {
-                li.addEventListener("click", () => gagner(li))
-            } else {
-                li.addEventListener("click", () => perdre(li))
-            }
+            li.addEventListener("click", () => gererClicCarte(li, index));
+        }
+    }
+
+    function gererClicCarte(li, index) {
+        if (!jeuActif) return;
+        
+        // Vérifier si la carte a déjà été cliquée
+        if (cartesCliquees.has(index)) {
+            return; // Ne rien faire si la carte a déjà été cliquée
+        }
+        
+        // Marquer la carte comme cliquée
+        cartesCliquees.add(index);
+        
+        if (index == indice_gagant) {
+            gagner(li);
+        } else {
+            perdre(li);
         }
     }
 
@@ -96,8 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (nbr_vie <= 0) {
             jeuActif = false;
-            resultat.textContent = "Perdu!";
-            
+            resultat.textContent = "Perdu!";            
             // Révéler la carte gagnante
             let carteGagnante = liste.children[indice_gagant].children[0];
             carteGagnante.classList.add("gagner");
